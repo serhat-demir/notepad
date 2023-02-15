@@ -94,7 +94,7 @@
                 android:layout_marginTop="16dp"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:text="@{note.note_content}" />
+                android:text="" />
         </LinearLayout>
     </ScrollView>
 </layout>

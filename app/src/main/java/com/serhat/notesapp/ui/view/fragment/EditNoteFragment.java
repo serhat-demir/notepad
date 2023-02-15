@@ -18,16 +18,23 @@ import com.serhat.notesapp.databinding.FragmentEditNoteBinding;
 import com.serhat.notesapp.ui.viewmodel.EditNoteViewModel;
 
 import dagger.hilt.android.AndroidEntryPoint;
+import io.noties.markwon.Markwon;
+import io.noties.markwon.editor.MarkwonEditor;
+import io.noties.markwon.editor.MarkwonEditorTextWatcher;
 
 @AndroidEntryPoint
 public class EditNoteFragment extends Fragment {
     private FragmentEditNoteBinding binding;
     private EditNoteViewModel viewModel;
+    private Markwon markwon;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_edit_note, container, false);
         binding.setEditNoteFragment(this);
+
+        markwon = Markwon.create(requireContext());
+        binding.txtEditNoteContent.addTextChangedListener(MarkwonEditorTextWatcher.withProcess(MarkwonEditor.create(markwon)));
 
         viewModel.onSuccessObserver.observe(getViewLifecycleOwner(), value -> {
             if (value) navToNoteDetails();

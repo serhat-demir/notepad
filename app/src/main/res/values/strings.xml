@@ -9,6 +9,7 @@
 
     <!-- Note Details Fragment -->
     <string name="msg_confirm_delete">Are you sure to delete this note?</string>
+    <string name="btn_yes">Yes</string>
 
     <!-- Repo Messages -->
     <string name="msg_note_title_or_content_cannot_be_empty">Not title or content can not be empty.</string>

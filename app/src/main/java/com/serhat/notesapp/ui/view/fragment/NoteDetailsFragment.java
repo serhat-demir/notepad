@@ -19,16 +19,19 @@ import com.serhat.notesapp.databinding.FragmentNoteDetailsBinding;
 import com.serhat.notesapp.ui.viewmodel.NoteDetailsViewModel;
 
 import dagger.hilt.android.AndroidEntryPoint;
+import io.noties.markwon.Markwon;
 
 @AndroidEntryPoint
 public class NoteDetailsFragment extends Fragment {
     private FragmentNoteDetailsBinding binding;
     private NoteDetailsViewModel viewModel;
+    private Markwon markwon;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_note_details, container, false);
         binding.setNoteDetailsFragment(this);
+        markwon = Markwon.create(requireContext());
 
         viewModel.onSuccessObserver.observe(getViewLifecycleOwner(), value -> {
             if (value) navToMain();
@@ -37,7 +40,10 @@ public class NoteDetailsFragment extends Fragment {
             if (!value.isEmpty()) Toast.makeText(requireContext(), value, Toast.LENGTH_SHORT).show();
         });
 
-        viewModel.getNote().observe(getViewLifecycleOwner(), note -> binding.setNote(note));
+        viewModel.getNote().observe(getViewLifecycleOwner(), note -> {
+            binding.setNote(note);
+            markwon.setMarkdown(binding.lblNoteDetailsContent, note.getNote_content());
+        });
 
         return binding.getRoot();
     }
@@ -52,7 +58,7 @@ public class NoteDetailsFragment extends Fragment {
     }
 
     public void deleteNote(View view, int note_id) {
-        Snackbar.make(view, getString(R.string.msg_confirm_delete), Snackbar.LENGTH_LONG).setAction("Evet", v -> viewModel.deleteNote(note_id)).show();
+        Snackbar.make(view, getString(R.string.msg_confirm_delete), Snackbar.LENGTH_LONG).setAction(getString(R.string.btn_yes), v -> viewModel.deleteNote(note_id)).show();
     }
 
     @Override

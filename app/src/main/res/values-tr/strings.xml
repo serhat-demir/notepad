@@ -8,4 +8,5 @@
     <string name="date_format">d MMMM yyyy</string>
     <string name="msg_note_title_or_content_cannot_be_empty">Not başlığı veya içeriği boş olamaz.</string>
     <string name="msg_something_went_wrong">Bir şeyler ters gitti.</string>
+    <string name="btn_yes">Evet</string>
 </resources>
