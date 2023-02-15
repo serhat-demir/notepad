@@ -4,7 +4,7 @@ A notepad application for Android <br/>
 
 # Installation
 You can download the app from the link below: <br/>
-[Notepad application for Android](https://github.com/serhat-demir/notepad/releases/download/1.0/Latest/notepad.apk)
+[Notepad application for Android](https://github.com/serhat-demir/notepad/releases/download/1.1/Latest/notepad.apk)
 
 # Screenshots
-[![img](https://img001.prntscr.com/file/img001/7ezwoFEHQSC-N1MzlGwexQ.png "img")](https://img001.prntscr.com/file/img001/7ezwoFEHQSC-N1MzlGwexQ.png "img")
+[![img](https://raw.githubusercontent.com/serhat-demir/notepad/main/app/src/main/res/drawable/ss.png "img")](https://raw.githubusercontent.com/serhat-demir/notepad/main/app/src/main/res/drawable/ss.png "img")
