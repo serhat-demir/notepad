@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="addNoteFragment"
+            type="com.serhat.notesapp.ui.view.fragment.AddNoteFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="24dp"
+        android:background="@color/black"
+        tools:context=".ui.view.fragment.AddNoteFragment">
+
+        <ImageButton
+            android:id="@+id/btnBackToMainFromAddNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_background"
+            android:onClick="@{() -> addNoteFragment.navToMain()}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back"
+            tools:ignore="ContentDescription" />
+
+        <Button
+            android:id="@+id/btnAddNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/gray"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:paddingVertical="8dp"
+            android:text="@string/btn_add_note"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textAllCaps="false"
+            android:onClick="@{() -> addNoteFragment.addNote(txtAddNoteTitle.getText().toString().trim(), txtAddNoteContent.getText().toString().trim())}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/txtAddNoteTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@android:color/transparent"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/txt_note_title"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="@color/light_gray"
+            android:textSize="42sp"
+            android:maxLength="50"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnBackToMainFromAddNote" />
+
+        <EditText
+            android:id="@+id/txtAddNoteContent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="@android:color/transparent"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/txt_note_content"
+            android:inputType="textMultiLine"
+            android:textColor="@color/white"
+            android:textColorHint="@color/light_gray"
+            android:textSize="28sp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAddNoteTitle"
+            android:importantForAutofill="no" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

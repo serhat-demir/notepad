@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Notepad</string>
+    <string name="date_format">MMMM d, yyyy</string>
+
+    <!-- Add Note Fragment -->
+    <string name="btn_add_note">Save</string>
+    <string name="txt_note_title">Title</string>
+    <string name="txt_note_content">Type something…</string>
+
+    <!-- Note Details Fragment -->
+    <string name="msg_confirm_delete">Are you sure to delete this note?</string>
+    <string name="btn_yes">Yes</string>
+
+    <!-- Repo Messages -->
+    <string name="msg_note_title_or_content_cannot_be_empty">Not title or content can not be empty.</string>
+    <string name="msg_something_went_wrong">Something went wrong.</string>
+</resources>

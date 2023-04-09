@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Not Defteri</string>
+    <string name="btn_add_note">Kaydet</string>
+    <string name="txt_note_title">Başlık</string>
+    <string name="txt_note_content">Bir şeyler yazın…</string>
+    <string name="msg_confirm_delete">Bu notu silmek istediğinize emin misiniz?</string>
+    <string name="date_format">d MMMM yyyy</string>
+    <string name="msg_note_title_or_content_cannot_be_empty">Not başlığı veya içeriği boş olamaz.</string>
+    <string name="msg_something_went_wrong">Bir şeyler ters gitti.</string>
+    <string name="btn_yes">Evet</string>
+</resources>
